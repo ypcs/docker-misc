@@ -1,4 +1,4 @@
-FROM ypcs/node:latest
+FROM ypcs/java:jre
 
 RUN \
     /usr/local/sbin/docker-upgrade && \
@@ -10,9 +10,6 @@ RUN \
         vim \
         vim-scripts && \
     /usr/local/sbin/docker-cleanup
-
-RUN \
-    npm install -g npx
 
 RUN adduser --disabled-password --gecos "User,,," user
 
