@@ -19,3 +19,5 @@ RUN adduser --disabled-password --gecos "User,,," user
 WORKDIR /home/user
 
 USER user
+
+CMD ["bash"]
