@@ -9,8 +9,10 @@ RUN /usr/lib/docker-helpers/apt-setup && \
         build-essential \
         cargo \
         git \
+        libasound2 \
         libasound2-dev \
         libdbus-1-dev \
+        libpulse0 \
         libpulse-dev \
         libssl-dev \
         openssl \
@@ -24,6 +26,7 @@ RUN /usr/lib/docker-helpers/apt-setup && \
     cp target/release/spotifyd /usr/local/bin/spotifyd && \
     cd .. && \
     rm -rf spotifyd && \
+    rm -rf ~/.cargo && \
     apt-get --assume-yes --purge remove \
         build-essential \
         cargo \
