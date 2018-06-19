@@ -12,6 +12,8 @@ RUN /usr/lib/docker-helpers/apt-setup && \
         libasound2-dev \
         libdbus-1-dev \
         libpulse-dev \
+        libssl-dev \
+        openssl \
         pkg-config \
         portaudio19-dev \
         rustc && \
@@ -29,6 +31,8 @@ RUN /usr/lib/docker-helpers/apt-setup && \
         libasound2-dev \
         libdbus-1-dev \
         libpulse-dev \
+        libssl-dev \
+        openssl \
         pkg-config \
         portaudio19-dev \
         rustc && \
