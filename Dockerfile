@@ -50,7 +50,8 @@ RUN curl -fslOL https://sourceforge.net/projects/catacombae/files/HFSExplorer/0.
 
 RUN curl -fslOL https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-12.12/yajsw-stable-12.12.zip && \
     mkdir -p ~/git/ghidra.bin/Ghidra/Features/GhidraServer/ && \
-    cp yajsw-stable-12.12.zip ~/git/ghidra.bin/Ghidra/Features/GhidraServer/
+    cp yajsw-stable-12.12.zip ~/git/ghidra.bin/Ghidra/Features/GhidraServer/ && \
+    rm -f yajsw-stable-12.12.zip
 
 WORKDIR /usr/src
 
