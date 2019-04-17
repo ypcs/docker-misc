@@ -50,8 +50,8 @@ RUN curl -fslOL https://sourceforge.net/projects/catacombae/files/HFSExplorer/0.
     rm -rf hfsx hfsexplorer-0_21-bin.zip
 
 RUN curl -fslOL https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-12.12/yajsw-stable-12.12.zip && \
-    mkdir -p ~/git/ghidra.bin/Ghidra/Features/GhidraServer/ && \
-    cp yajsw-stable-12.12.zip ~/git/ghidra.bin/Ghidra/Features/GhidraServer/ && \
+    mkdir -p /usr/src/ghidra.bin/Ghidra/Features/GhidraServer/ && \
+    cp yajsw-stable-12.12.zip /usr/src/ghidra.bin/Ghidra/Features/GhidraServer/ && \
     rm -f yajsw-stable-12.12.zip
 
 WORKDIR /usr/src
@@ -60,4 +60,6 @@ RUN git clone https://github.com/NationalSecurityAgency/ghidra
 
 WORKDIR /usr/src/ghidra
 
-RUN gradle buildNatives_linux64
+RUN gradle yajswDevUnpack
+
+RUN gradle buildGhidra
