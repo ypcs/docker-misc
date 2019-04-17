@@ -15,12 +15,9 @@ RUN /usr/lib/docker-helpers/apt-setup && \
         wget && \
     /usr/lib/docker-helpers/apt-cleanup
 
-RUN adduser --disabled-password --gecos "user,,," user
-
-WORKDIR /usr/src
-
-RUN git clone https://github.com/NationalSecurityAgency/ghidra && \
-    chown -R user:user /usr/src/ghidra
+RUN adduser --disabled-password --gecos "user,,," user && \
+    chgrp user /usr/src && \
+    chmod 0775 /usr/src
 
 USER user
 
@@ -50,3 +47,10 @@ RUN curl -fslOL https://sourceforge.net/projects/catacombae/files/HFSExplorer/0.
     cp csframework.jar hfsx_dmglib.jar hfsx.jar iharder-base64.jar /home/user/flatRepo/ && \
     cd .. && \
     rm -rf hfsx hfsexplorer-0_21-bin.zip
+
+
+WORKDIR /usr/src
+
+RUN git clone https://github.com/NationalSecurityAgency/ghidra
+
+WORKDIR /usr/src/ghidra
