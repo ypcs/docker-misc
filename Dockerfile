@@ -48,6 +48,9 @@ RUN curl -fslOL https://sourceforge.net/projects/catacombae/files/HFSExplorer/0.
     cd .. && \
     rm -rf hfsx hfsexplorer-0_21-bin.zip
 
+RUN curl -fslOL https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-12.12/yajsw-stable-12.12.zip && \
+    mkdir -p ~/git/ghidra.bin/Ghidra/Features/GhidraServer/ && \
+    cp yajsw-stable-12.12.zip ~/git/ghidra.bin/Ghidra/Features/GhidraServer/
 
 WORKDIR /usr/src
 
