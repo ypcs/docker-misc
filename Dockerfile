@@ -8,6 +8,7 @@ RUN /usr/lib/docker-helpers/apt-setup && \
         bison \
         build-essential \
         curl \
+        flex \
         git \
         jython \
         python3 \
