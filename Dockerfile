@@ -58,3 +58,5 @@ WORKDIR /usr/src
 RUN git clone https://github.com/NationalSecurityAgency/ghidra
 
 WORKDIR /usr/src/ghidra
+
+RUN gradle buildNatives_linux64
