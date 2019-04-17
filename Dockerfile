@@ -5,6 +5,7 @@ ARG APT_PROXY
 RUN /usr/lib/docker-helpers/apt-setup && \
     /usr/lib/docker-helpers/apt-upgrade && \
     apt-get --assume-yes install \
+        bison \
         build-essential \
         curl \
         git \
